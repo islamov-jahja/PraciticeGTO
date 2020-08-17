@@ -1,0 +1,35 @@
+@startuml
+actor User #red
+box "Client" #LightBlue
+participant UI
+participant Controller
+end box
+participant Server
+participant Database
+
+User->UI: Fill fields
+Activate UI
+User->UI: Button click
+UI->Controller: tapHandling()
+Activate Controller
+Controller -> Controller: validateFields()
+Activate Controller #FFBBBB
+Controller->Server: updateProfile()
+Deactivate Controller
+Activate Server
+Server->Server: validate()
+Activate Server #FFBBBB
+Server->Database: trySaveToDatabase()
+Deactivate Server
+Activate Database
+Database-->Server: sendSuccess()
+Deactivate Database
+Server-->Controller: sendSuccessResponse()
+Controller-->UI: showSuccess()
+Deactivate Controller
+UI->UI: updateUI()
+Activate UI
+UI->User
+Deactivate UI
+
+@enduml

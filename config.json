@@ -1,0 +1,19 @@
+{
+  "DB":{
+    "DBDriver":"mysql",
+    "DBHost":"",
+    "DBName":"",
+    "DBUser":"",
+    "DBPass":""
+  },
+  "Mailer":{
+    "login": "gto_service@gtoservice.ru",
+    "password":"gto_service123321",
+    "host": "smtp.beget.com",
+    "port": "465"
+  },
+  "Token":{
+    "key":"ochen slozniy parol? ti ne uqadaesh",
+    "leeway": 10
+  }
+}

@@ -1,0 +1,25 @@
+@startuml
+
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
+
+LAYOUT_TOP_DOWN
+
+Person_Ext(anonymous_user, "Участник")
+Person(aggregated_user, "Секретарь")
+
+System_Boundary(c1, "Внесение результатов соревнования"){
+    
+    Container(give_id, "Предоставление id в системе", " ")
+
+    Container(write_id, "Ввод id участника", "")
+
+    Container(write_result, "Вносит результат участника для данного соревнования", "")
+}
+
+Rel(anonymous_user, give_id, " ")
+Rel(give_id, write_id, " ")
+Rel(write_id, aggregated_user, " ")
+Rel(write_id, write_result, " ")
+
+
+@enduml

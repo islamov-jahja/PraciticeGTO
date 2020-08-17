@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Prepare') {
+            steps {
+                sh 'composer install'
+            }
+        }
+        stage('analyze') {
+             steps{
+                 sh 'composer analyze'
+             }
+         }
+        stage('testing') {
+              steps{
+                 sh 'composer unitTests'
+              }
+        }
+    }
+
+}

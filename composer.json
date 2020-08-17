@@ -1,0 +1,72 @@
+{
+    "name": "slim/slim-skeleton",
+    "description": "A Slim Framework skeleton application for rapid development",
+    "keywords": [
+        "microframework",
+        "rest",
+        "router",
+        "psr7"
+    ],
+    "homepage": "http://github.com/slimphp/Slim-Skeleton",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Josh Lockhart",
+            "email": "info@joshlockhart.com",
+            "homepage": "http://www.joshlockhart.com/"
+        },
+        {
+            "name": "Pierre Berube",
+            "email": "pierre@lgse.com",
+            "homepage": "http://www.lgse.com/"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "ext-fileinfo": "*",
+        "ext-gd": "*",
+        "ext-json": "*",
+        "doctrine/annotations": "^1.8",
+        "doctrine/doctrine-fixtures-bundle": "^3.2",
+        "firebase/php-jwt": "^5.0",
+        "illuminate/database": "^6.3",
+        "monolog/monolog": "^1.24",
+        "phan/phan": "2.6",
+        "php-di/php-di": "^6.0",
+        "phpoffice/phpspreadsheet": "^1.12",
+        "slim/psr7": "^0.5",
+        "slim/slim": "^4.1",
+        "swiftmailer/swiftmailer": "^6.2",
+        "symfony/maker-bundle": "^1.13",
+        "symfony/orm-pack": "^1.0",
+        "symfony/validator": "^5.0",
+        "zircote/swagger-php": "^2.0"
+    },
+    "require-dev": {
+        "codeception/codeception": "^4.1",
+        "codeception/module-asserts": "^1.1",
+        "codeception/module-phpbrowser": "^1.0.0",
+        "codeception/module-rest": "^1.2",
+        "phpunit/phpunit": "^7.5"
+    },
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "start": "php -S localhost:8081 -t public",
+        "unitTests": "unitTestStart.bat",
+        "integrationTests": "integrationTestStart.bat",
+        "analyze": "php vendor/phan/phan/phan --allow-polyfill-parser  analyze"
+    }
+}

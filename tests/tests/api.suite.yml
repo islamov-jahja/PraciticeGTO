@@ -1,0 +1,10 @@
+class_name: ApiTester
+modules:
+    enabled: [Helper\Api, PhpBrowser, REST]
+    config:
+        PhpBrowser:
+            url: http://localhost:8081/api/v1
+        REST:
+            depends: PhpBrowser
+            url: http://localhost:8081/api/v1/
+            shortDebugResponse: 300

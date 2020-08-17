@@ -1,0 +1,7 @@
+{
+    "statusCode": 500,
+    "error": {
+        "type": "SERVER_ERROR",
+        "description": "Argument 1 passed to App\\Validators\\BaseValidator::validate() must be of the type array, null given, called in D:\\downloads\\open_server_5_3_5_basic_premium_ultimate\\OSPanel\\domains\\backend\\src\\Application\\Actions\\User\\AuthAction.php on line 105"
+    }
+}

@@ -1,0 +1,19 @@
+@startuml C4_Elements
+
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
+
+Person(admin, "Администратор")
+Person_Ext(anonymous_user, "Пользователь")
+System_Boundary(c1, "ГТО сервис") {
+    Container(web_app, "React Web Application", "React 16.x.x, Typescript 3.8.x", "Сайт с авторизацией для обычных пользователей и администраторов, секретарей и тренеров")
+    Container(backend, "Apache сервер", "Ubuntu, Apache 2.4.10", "Серверная часть")
+    ContainerDb(mysql, "MySQL database", "MySQL 5.7.x", "Хранит множество данных по сервису")
+
+
+    Rel(admin, web_app, "Пользуется")
+    Rel(anonymous_user, web_app, "Пользуется")
+    Rel(web_app, backend, "Делает запросы", "async, JSON\HTTP")
+    Rel(backend, mysql, "Взаимодействует", "Eloquent ORM")
+}
+
+@enduml

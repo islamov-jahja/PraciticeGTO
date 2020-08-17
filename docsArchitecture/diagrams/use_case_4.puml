@@ -1,0 +1,23 @@
+@startuml
+
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
+
+LAYOUT_TOP_DOWN
+
+Person_Ext(anonymous_user, "Участник")
+
+System_Boundary(c1, "Принятие приглашения"){
+    
+    Container(registration, "Зарегистрирован?", "")
+
+    Container(registration_action, "Регистрация", "Каждый участник должен быть зарегистрирован в системе")
+
+    Container(invite_accept, "Приглашение принято", "")
+}
+
+Rel(anonymous_user, registration, " ")
+Rel(registration, registration_action, "Нет")
+Rel(registration, invite_accept, "Да")
+Rel(registration_action, invite_accept, " ")
+
+@enduml
